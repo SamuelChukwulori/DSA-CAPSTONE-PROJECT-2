@@ -87,6 +87,14 @@ Power BI visuals were used to display:
 
 ## 💡 Insights and Analysis
 
+### Question 1: Which Product Category had the highest Sales?
+- Technology
+  ``` SQL
+  SELECT Product_Category, SUM(Sales) as TotalSales
+  FROM [dbo].[KMS Sql Case Study]
+  GROUP BY Product_Category
+  ORDER BY TotalSales DESC
+
 ### Question 4: Bottom 10 Customers
 - The lowest-spending customers were mostly from the **Consumer** and **Home Office** segments.
 - Common purchases: **Furniture** and **Office Supplies**
