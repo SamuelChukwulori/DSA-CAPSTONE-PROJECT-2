@@ -38,8 +38,8 @@ The dataset was provided through the course LMS and contains:
 |-----------------------------|-----------------------------------------|
 | Data Cleaning               | Microsoft Excel[Download Here](https://www.microsoft.com/en-us/microsoft-365/p/excel/CFQ7TTC0HR4R?activetab=pivot:overviewtab)        |
 | SQL Querying & Analysis     | Microsoft SQL Server[Download here](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)   |
-| Data Visualization          | Power BI[Download Here](https://go.microsoft.com/fwlink/?LinkId=2240819&clcid=0x409&culture=en-us&country=us)               |
-| Portfolio Hosting           | GitHub  [Download Here](https://github.com/)               |
+| Data Visualization          | Power BI    [Download Here](https://go.microsoft.com/fwlink/?LinkId=2240819&clcid=0x409&culture=en-us&country=us)               |
+| Portfolio Hosting           | GitHub      [Download Here](https://github.com/)               |
 
 ---
 
@@ -76,15 +76,11 @@ Power BI visuals were used to display:
    - Imported both datasets
    - Joined with `LEFT JOIN` to create a combined view of order and return status
 
-3. **SQL Query Development**
-   - Used `GROUP BY`, `JOIN`, `TOP N`, `CASE`, and filtering functions to answer business questions
-
-4. **Power BI Visualization**
+3. **Power BI Visualization**
    - Interactive dashboards created using bar charts, tables, matrices, and KPIs
    - Slicers added for user interactivity (e.g., by Region, Segment, Ship Mode)
 
-5. **Documentation (GitHub)**
-   - Structured folders for SQL scripts, dashboard, screenshots
+4. **Documentation (GitHub)**
    - Created README.md with complete walkthrough
 
 ---
