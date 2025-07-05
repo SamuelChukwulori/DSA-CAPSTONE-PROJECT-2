@@ -94,6 +94,26 @@ Power BI visuals were used to display:
   FROM [dbo].[KMS Sql Case Study]
   GROUP BY Product_Category
   ORDER BY TotalSales DESC
+### Question 2: What are the Top 3 and Bottom 3 Product regions in terms of Sales?
+- **TOP 3 REGIONS BY TOTAL SALES**
+   - 1. WEST:3597549.41
+   - 2. ONTARIO:3063212.60
+   - 3. PRARIE:2837304.60
+ ``` SQL
+  SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
+  FROM [dbo].[KMS Sql Case Study]
+  GROUP BY Region
+  ORDER BY TotalSales_by_Region desc
+
+---BOTTOM 3 REGION BY TOTAL SALES
+SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Region
+ORDER BY TotalSales_by_Region asc
+
+----1. NUNAVET: 116376.47
+----2. NORTHWEST TERRITORIES: 800847.35
+---3. YUKON: 975867.39
 
 ### Question 4: Bottom 10 Customers
 - The lowest-spending customers were mostly from the **Consumer** and **Home Office** segments.
