@@ -87,40 +87,6 @@ Power BI visuals were used to display:
 
 ## 💡 Insights and Analysis
 
-### Question 1: Which Product Category had the highest Sales?
-- Technology
-  ``` SQL
-  SELECT Product_Category, SUM(Sales) as TotalSales
-  FROM [dbo].[KMS Sql Case Study]
-  GROUP BY Product_Category
-  ORDER BY TotalSales DESC
-
-[Product Sales by Category](https://github.com/user-attachments/assets/26e70e0e-7e4c-4481-b3ff-dd5881ae4231)
-
-
-  
-### Question 2: What are the Top 3 and Bottom 3 Product regions in terms of Sales?
-- **Top 3 Regions by Total Sales**
- - WEST:3597549.41
- - ONTARIO:3063212.60
- - PRARIE:2837304.60
- ``` SQL
-  SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
-  FROM [dbo].[KMS Sql Case Study]
-  GROUP BY Region
-  ORDER BY TotalSales_by_Region desc
-
-- **Bottom 3 Regions by Total Sales**
-``` SQL
-SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
-FROM [dbo].[KMS Sql Case Study]
-GROUP BY Region
-ORDER BY TotalSales_by_Region ASC
-
-----1. NUNAVET: 116376.47
-----2. NORTHWEST TERRITORIES: 800847.35
----3. YUKON: 975867.39
-
 ### Question 4: Bottom 10 Customers
 - The lowest-spending customers were mostly from the **Consumer** and **Home Office** segments.
 - Common purchases: **Furniture** and **Office Supplies**
@@ -169,6 +135,7 @@ ORDER BY TotalSales_by_Region ASC
   GROUP BY k.Customer_Name, k.Customer_Segment
   ORDER BY Return_Count DESC
 ---
+
 
 ## 📌 Recommendations
 
