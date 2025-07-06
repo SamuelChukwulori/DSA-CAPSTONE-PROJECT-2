@@ -157,3 +157,19 @@ Power BI visuals were used to display:
 
 ---
 
+## 📁 Project Files and Resources
+
+### 📄 Source Files
+- [KMS SQL Case Study.csv](KMS%20Sql%20Case%20Study.csv)
+- [Order_Status.csv](Order_Status.csv)
+
+### 🧾 SQL Scripts
+- [KMS SQL QUERIES.txt](KMS%20SQL%20QUERIES.txt)
+
+### 📊 Power BI Dashboard
+- [SQL VISUALS.pbix](SQL%20VISUALS.pbix)
+
+### 🖼 SQL Query Visuals (Screenshots)
+- [SQL Queries Screenshot Folder](SQL%20Queries%20Screenshot/)
+
+
