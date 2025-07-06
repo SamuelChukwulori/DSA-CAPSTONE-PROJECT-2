@@ -1,0 +1,151 @@
+create database DSA_Capstone_Project
+
+select * from [KMS Sql Case Study]
+
+
+SELECT * FROM [dbo].[KMS Sql Case Study]
+
+---QUESTION 1--
+SELECT Product_Category, SUM(Sales) as TotalSales
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Product_Category
+ORDER BY TotalSales desc
+
+--ANSWER:5984248.50-----
+
+---QUESTION 2A-----
+SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Region
+ORDER BY TotalSales_by_Region desc
+
+--1.WEST:3597549.41--
+--2.ONTARIO:3063212.60--
+--3.PRARIE:2837304.60--
+
+---QUESTION 2B-----
+---BOTTOM 3 REGION BY TOTAL SALES
+SELECT Top 3 Region, SUM(Sales) as TotalSales_by_Region
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Region
+ORDER BY TotalSales_by_Region asc
+
+----1. NUNAVET: 116376.47
+----2. NORTHWEST TERRITORIES: 800847.35
+---3. YUKON: 975867.39
+
+----QUESTION 3--
+SELECT SUM(Sales) as TotalSales
+FROM [dbo].[KMS Sql Case Study]
+where Product_Sub_Category = 'Appliances'
+AND Province = 'Ontario'
+AND Region = 'Ontario'
+
+---ANSWER: Total sales of Appliances in Ontario = 202346.84
+
+----QUESTION 4---
+
+SELECT TOP 10 Customer_Name,Customer_Segment,Product_Category,
+SUM(Sales) AS TotalSales
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Customer_Name,Customer_Segment,Product_Category
+ORDER BY TotalSales ASC
+
+
+----QUESTION 5---
+SELECT TOP 1 Ship_Mode, SUM(Shipping_Cost) AS Total_Shipping_Cost
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Ship_Mode
+ORDER BY Total_Shipping_Cost desc
+
+---ANSWER: Delivery Truck= 51971.94
+
+-----QUESTION 6----
+----QUESTION 6A: WHO ARE THE MOST VALUABLE CUSTOMERS--
+SELECT TOP 10 Customer_Name, SUM(Sales) AS TotalSales
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Customer_Name
+ORDER BY TotalSales desc
+
+--QUESTION 6B: FIND THE PRODUCTS OR SERVICES THEY PURCHASE---
+SELECT TOP 10 Customer_Name, Product_Category, SUM(Sales)	AS Category_Sales
+FROM [dbo].[KMS Sql Case Study]
+	WHERE Customer_Name IN (
+	SELECT TOP 10 Customer_Name
+FROM [dbo].[KMS Sql Case Study]
+GROUP BY Customer_Name
+ORDER BY SUM(Sales) desc
+)
+GROUP BY Customer_Name, Product_Category
+ORDER BY Customer_Name, Category_Sales desc
+
+-----QUESTION 7----
+SELECT TOP 1 Customer_Name, SUM(Sales) AS Highest_Sales
+FROM [dbo].[KMS Sql Case Study]
+WHERE Customer_Segment= 'Small Business'
+GROUP BY Customer_Name
+ORDER BY Highest_Sales desc
+----ANSWER DENNIS KANE: 75967.59
+
+------QUESTION 8---
+SELECT TOP 1 Customer_Name, COUNT(DISTINCT Order_ID) AS Order_Count
+FROM [dbo].[KMS Sql Case Study]
+WHERE Customer_Segment= 'Corporate'
+AND Order_Date BETWEEN '2009-01-01' AND '2012-12-31'
+GROUP BY Customer_Name
+ORDER BY Order_Count DESC
+
+---ANSWER: ADAM HART 18
+
+----QUESTION 9----
+SELECT TOP 1 Customer_Name, SUM(Profit) AS Total_Profit
+FROM [dbo].[KMS Sql Case Study]
+WHERE Customer_Segment= 'Consumer'
+GROUP BY Customer_Name
+ORDER BY Total_profit desc 
+-----ANSWER EMILY PHAN 34005.44
+
+SELECT * FROM [dbo].[Order_Status]
+
+----QUESTION 10-----
+
+
+SELECT DISTINCT k.Customer_Name,
+       k.Customer_Segment
+FROM [KMS Sql Case Study] k
+INNER JOIN [Order_Status] o
+ON k.Order_ID = o.Order_ID
+WHERE Status = 'Returned'
+
+----QUERY TO DETERMINE HOW MANY TIMES EACH CUSTOMER RETURNED ITEMS---
+
+SELECT k.Customer_Name,
+       k.Customer_Segment,
+	  COUNT (*) AS Return_Count
+FROM [KMS Sql Case Study] k
+JOIN [Order_Status] o
+ON k.Order_ID = o.Order_ID
+WHERE Status = 'Returned'
+GROUP BY k.Customer_Name, k.Customer_Segment
+ORDER BY Return_Count desc
+
+------QUESTION 11------
+SELECT 
+    Order_Priority,
+    Ship_Mode,
+	COUNT (*) AS Order_Count,
+	SUM(Shipping_Cost) AS Total_Shipping_Cost,
+	AVG(Shipping_Cost) AS Avg_Shipping_Cost
+	FROM [dbo].[KMS Sql Case Study]
+	GROUP BY Order_Priority, Ship_Mode
+	ORDER BY Order_Priority, Total_Shipping_Cost desc
+
+
+	----FOR THE PURPOSE OF VISUALISATION---
+	CREATE VIEW vw_KMS_Order_Status AS 
+	SELECT k.*, o.Status
+	FROM [dbo].[KMS Sql Case Study] k
+	LEFT JOIN [Order_Status] o ON
+	k.Order_ID = o.Order_ID
+
+	SELECT * FROM [dbo].[vw_KMS_Order_Status]
