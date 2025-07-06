@@ -94,6 +94,11 @@ Power BI visuals were used to display:
   FROM [dbo].[KMS Sql Case Study]
   GROUP BY Product_Category
   ORDER BY TotalSales DESC
+
+![Product Sales by Category](https://github.com/user-attachments/assets/26e70e0e-7e4c-4481-b3ff-dd5881ae4231)
+
+
+  
 ### Question 2: What are the Top 3 and Bottom 3 Product regions in terms of Sales?
 - **Top 3 Regions by Total Sales**
  - WEST:3597549.41
