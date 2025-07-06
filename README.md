@@ -95,7 +95,7 @@ Power BI visuals were used to display:
   GROUP BY Product_Category
   ORDER BY TotalSales DESC
 
-![Product Sales by Category](https://github.com/user-attachments/assets/26e70e0e-7e4c-4481-b3ff-dd5881ae4231)
+[Product Sales by Category](https://github.com/user-attachments/assets/26e70e0e-7e4c-4481-b3ff-dd5881ae4231)
 
 
   
