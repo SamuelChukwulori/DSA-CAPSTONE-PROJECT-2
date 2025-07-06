@@ -25,7 +25,7 @@ This capstone project explores historical transactional data from Kultra Mega St
 
 ## 📂 Data Source
 
-The dataset was provided through the course LMS and contains:
+The dataset was provided through the Canvas LMS platform and contains:
 
 - `KMS Sql Case Study.csv` — Detailed customer order and transaction records (2009–2012)
 - `Order Status.csv` — A list of returned order IDs during the same period
